@@ -1,0 +1,16 @@
+<h1>Cart</h1>
+
+<table *ngIf="contents.length > 0 else emptyCart">
+    <tbody>
+        <tr *ngFor="let c of contents; let i = index">
+            <td><img src="/assets/fruits/{{ c.item }}.png" width="80"></td>
+            <td>
+                <tr>{{ c.item | titlecase }}</tr>
+                <tr>Quantity: {{ c.quantity }}</tr>
+                <tr><button (click)="remove(i)">Remove</button></tr>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #emptyCart><p>Your cart is empty</p></ng-template>

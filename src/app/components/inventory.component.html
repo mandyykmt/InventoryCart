@@ -1,0 +1,20 @@
+<h1>Inventory</h1>
+
+<table>
+    <tbody>
+        <tr *ngFor="let f of fruits; let i = index">
+            <td>
+                <img src="/assets/fruits/{{ f }}.png" width="80">
+            </td>
+            <td>
+                {{ f | titlecase}}
+            </td>
+            <td>
+                <button (click)="inc(i)">+</button>
+            </td>
+            <td>
+                <button (click)="dec(i)">-</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
