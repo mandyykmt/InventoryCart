@@ -23,7 +23,7 @@ export class AppComponent {
           this.cart.splice(index, 1)
         }
       }
-    } 
+    }
     console.info(this.cart)
   }
 }
