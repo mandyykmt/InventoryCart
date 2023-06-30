@@ -11,11 +11,12 @@ export class AppComponent {
   cart : CartItem[] = []
 
   process(action : CartAction) {
-    let i = this.cart.find(i => i.item === action.item)
+    // e is the element of the cart array currently iterated 
+    let i = this.cart.find(e => e.item === action.item)
     if (action.quantity !== 0) {
-      if(!i) {
+      if(!i && action.quantity === 1) {
         this.cart.push({...action} as CartItem)
-      } else {
+      } else if(!!i) {
         i.quantity += action.quantity
         if (i.quantity <= 0 ) {
           let index = this.cart.indexOf(i)
